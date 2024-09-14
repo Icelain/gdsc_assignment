@@ -190,7 +190,7 @@
             async function fetchSubmissions() {
                 try {
                     const response = await fetch(
-                        "http://localhost:5050/api/get_text",
+                        "/api/get_text",
                     );
                     if (response.ok) {
                         const data = await response.json();
