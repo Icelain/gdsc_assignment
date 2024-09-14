@@ -8,7 +8,6 @@ import (
 	"net/http"
 
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/rs/cors"
 )
 
 type StoreRequest struct {
@@ -26,6 +25,22 @@ func init() {
 
 	db.Exec("CREATE TABLE IF NOT EXISTS STORE(data text);")
 
+}
+
+func CORS(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Access-Control-Allow-Origin", "*")
+		w.Header().Add("Access-Control-Allow-Credentials", "true")
+		w.Header().Add("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		w.Header().Add("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+
+		if r.Method == "OPTIONS" {
+			http.Error(w, "No Content", http.StatusNoContent)
+			return
+		}
+
+		next(w, r)
+	}
 }
 
 func main() {
@@ -58,7 +73,7 @@ func main() {
 
 	})
 
-	mux.HandleFunc("/uwu", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/uwu", CORS(func(w http.ResponseWriter, r *http.Request) {
 
 		if r.Method != http.MethodGet {
 
@@ -73,9 +88,9 @@ func main() {
 			"message": "you found the base endpoint uwu ;)",
 		})
 
-	})
+	}))
 
-	mux.HandleFunc("/api/store_text", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/api/store_text", CORS(func(w http.ResponseWriter, r *http.Request) {
 
 		if r.Method != http.MethodPost {
 
@@ -114,9 +129,9 @@ func main() {
 			"message": "text has been successfully inserted",
 		})
 
-	})
+	}))
 
-	mux.HandleFunc("/api/get_text", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/api/get_text", CORS(func(w http.ResponseWriter, r *http.Request) {
 
 		if r.Method != http.MethodGet {
 
@@ -150,11 +165,9 @@ func main() {
 
 		}
 
-	})
-
-	handler := cors.Default().Handler(mux)
+	}))
 
 	log.Println("listening on port 5050")
-	http.ListenAndServe(":5050", handler)
+	http.ListenAndServe(":5050", mux)
 
 }
