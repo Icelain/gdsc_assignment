@@ -152,7 +152,7 @@ func main() {
 
 	})
 
-	handler := cors.AllowAll().Handler(mux)
+	handler := cors.Default().Handler(mux)
 
 	log.Println("listening on port 5050")
 	http.ListenAndServe(":5050", handler)
