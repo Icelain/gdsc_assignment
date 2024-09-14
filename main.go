@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	sqlite "github.com/mattn/go-sqlite3"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type StoreRequest struct {
@@ -100,12 +100,7 @@ func main() {
 
 		_, err := db.Exec("INSERT INTO STORE(data) VALUES(?);", storeRequest.Text)
 
-		if err == sqlite.ErrMismatch {
-
-			http.Error(w, "Data type mismatch please look at the documentation again", http.StatusBadRequest)
-			return
-
-		} else if err != nil {
+		if err != nil {
 
 			log.Println(err)
 			http.Error(w, "Something went wrong internally", http.StatusInternalServerError)
