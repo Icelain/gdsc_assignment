@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://dscsnu.github.io/gdscsnioe-recruitment/favicon.png?"
+        />
+        <script src="https://cdn.tailwindcss.com/3.4.5"></script>
+        <title>GDSC Dev Team Recruitments</title>
+    </head>
+    <body class="bg-gray-100 text-gray-800 font-sans">
+        <div class="container mx-auto px-4 py-8 max-w-4xl">
+            <header class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-blue-600 mb-2">
+                    GDSC SNIoE Dev Team Recruitments
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Welcome to the GDSC SNIoE Dev Team recruitment test!
+                </p>
+            </header>
+
+            <main class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <p class="mb-6 text-lg">
+                    We're excited to have you here. This page contains
+                    everything you need to know about the task, so let's walk
+                    through it together:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <ol class="list-decimal pl-6 space-y-4">
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    Style This Page
+                                </h3>
+                                <p class="mt-2">
+                                    Enhance the design, improve the layout, and
+                                    give it your personal touch using
+                                    TailwindCSS or any other CSS you prefer.
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    Create the Input Box
+                                </h3>
+                                <p class="mt-2">
+                                    Add an input box for users to submit their
+                                    text. Ensure it's responsive and looks good
+                                    on all devices.
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    Build a Submission System
+                                </h3>
+                                <p class="mt-2">
+                                    Set up a system to save user submissions
+                                    using any backend technology or storage
+                                    method you prefer.
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    Display the Submissions
+                                </h3>
+                                <p class="mt-2">
+                                    Create a way to display the stored
+                                    submissions, whether it's a simple list or
+                                    an elaborate admin panel.
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    Go Live
+                                </h3>
+                                <p class="mt-2">
+                                    Deploy your project to a hosting service of
+                                    your choice and make it accessible via a
+                                    link.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <ol class="list-decimal pl-6 space-y-4" start="6">
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    Add Some Documentation
+                                </h3>
+                                <p class="mt-2">
+                                    Write a README file explaining your
+                                    approach, tools used, and how to run
+                                    everything locally.
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    Take Your Time, But Not Too Much!
+                                </h3>
+                                <p class="mt-2">
+                                    You have until 12:00 AM, 19th September 2024
+                                    to complete this task. Focus on doing your
+                                    best within the time you have.
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    How We'll Evaluate
+                                </h3>
+                                <ul class="list-disc pl-6 mt-2 space-y-1">
+                                    <li>Design & Usability</li>
+                                    <li>Functionality</li>
+                                    <li>Code Quality</li>
+                                    <li>Creativity</li>
+                                    <li>Deployment</li>
+                                    <li>Your Approach</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3 class="font-bold text-lg text-blue-700">
+                                    How to Submit
+                                </h3>
+                                <p class="mt-2">
+                                    Push your code to a GitHub repository and
+                                    share the link along with your live page
+                                    URL.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <p class="mt-8 text-lg text-center">
+                    We're looking forward to seeing how you make this page your
+                    own. Have fun with the challenge, and good luck!
+                </p>
+            </main>
+
+            <section class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold text-blue-600 mb-4">
+                    Submit Your Task
+                </h2>
+                <div
+                    class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4"
+                >
+                    <input
+                        type="text"
+                        id="textInput"
+                        placeholder="Enter text"
+                        class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    <button
+                        id="submitButton"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </section>
+
+            <section class="bg-white shadow-lg rounded-lg p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-blue-600">
+                        Submitted Entries
+                    </h2>
+                    <button
+                        id="viewSubmissionsButton"
+                        class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300 ease-in-out"
+                    >
+                        View Submissions
+                    </button>
+                </div>
+                <div id="submissionsList" class="space-y-4">
+                    <!-- Submitted entries will be displayed here -->
+                </div>
+            </section>
+        </div>
+
+        <script type="module">
+            let textInput = document.getElementById("textInput");
+            let submissionsList = document.getElementById("submissionsList");
+            let viewSubmissionsButton = document.getElementById(
+                "viewSubmissionsButton",
+            );
+
+            // Function to fetch and display submissions
+            async function fetchSubmissions() {
+                try {
+                    const response = await fetch(
+                        "http://localhost:5050/api/get_text",
+                    );
+                    if (response.ok) {
+                        const data = await response.json();
+                        submissionsList.innerHTML = ""; // Clear existing entries
+                        if (data.response && Array.isArray(data.response)) {
+                            data.response.reverse().forEach((text) => {
+                                const entryDiv = document.createElement("div");
+                                entryDiv.className =
+                                    "p-4 bg-gray-50 rounded-md";
+                                entryDiv.textContent = text;
+                                submissionsList.appendChild(entryDiv);
+                            });
+                        } else {
+                            submissionsList.innerHTML =
+                                '<p class="text-gray-500">No submissions found.</p>';
+                        }
+                    } else {
+                        throw new Error("Failed to fetch submissions");
+                    }
+                } catch (error) {
+                    console.error("Error fetching submissions:", error);
+                    submissionsList.innerHTML =
+                        '<p class="text-red-500">Failed to load submissions. Please try again later.</p>';
+                }
+            }
+
+            // Add click event listener to the View Submissions button
+            viewSubmissionsButton.addEventListener("click", fetchSubmissions);
+
+            document.getElementById("submitButton").onclick = async () => {
+                const response = await fetch("/api/store_text", {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({ text: textInput.value }),
+                });
+                const response_json = await response.json();
+
+                if (response.ok) {
+                    alert("Entered text was successfully stored");
+                    textInput.value = ""; // Clear input after successful submission
+                } else if (response.status == 500) {
+                    alert("An error occurred on our end");
+                } else {
+                    alert("An error occurred on your end");
+                }
+            };
+        </script>
+    </body>
+</html>
