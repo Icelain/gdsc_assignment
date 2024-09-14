@@ -8,6 +8,7 @@ import (
 	"net/http"
 
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/rs/cors"
 )
 
 type StoreRequest struct {
@@ -151,7 +152,9 @@ func main() {
 
 	})
 
+	handler := cors.AllowAll().Handler(mux)
+
 	log.Println("listening on port 5050")
-	http.ListenAndServe(":5050", mux)
+	http.ListenAndServe(":5050", handler)
 
 }
